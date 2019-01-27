@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -60,17 +59,12 @@ public class Equationsolver {
         for(int row = 0; row < matrix.length; row++) {
 
             // current pivot element is 0, so we need to swap another row to get a pivot element
-            if(matrix[row][row] == 0) {
+            if(isZero(matrix[row][row])) {
                 boolean couldFindSwap = swapToPivotElement(matrix, row);
 
+                // Either inconsistent or multiple
                 if(!couldFindSwap) {
-                    if(matrix[row][matrix.length] == 0) {
-                        io.println("multiple");
-
-                    } else {
-                        io.println("inconsistent");
-                    }
-
+                    findError(matrix);
                     return;
                 }
             }
@@ -117,9 +111,32 @@ public class Equationsolver {
         io.println();
     }
 
+    static void findError(double[][] matrix) {
+        for(int row = 0; row < matrix.length; row++) {
+            boolean isAllZeros = true;
+
+            for(int i = 0; i < matrix.length; i++) {
+                if(!isZero(matrix[row][i])) {
+                    isAllZeros = false;
+                }
+            }
+
+            double rightSide = matrix[row][matrix.length];
+
+            // Row with all zeros and non-zero right is in inconsistent system
+            if(isAllZeros && !isZero(rightSide)) {
+                io.println("inconsistent");
+                return;
+            }
+
+        }
+
+        io.println("multiple");
+    }
+
     static boolean swapToPivotElement(double[][] matrix, int row) {
         for(int i = row + 1; i < matrix.length; i++) {
-            if(matrix[row][i] != 0) {
+            if(!isZero(matrix[row][i])) {
                 swap(matrix, row, i);
                 swapsMade.add(new int[]{row, i});
                 return true;
@@ -150,14 +167,11 @@ public class Equationsolver {
         }
     }
 
-    static double threadHold = 0.0001; // 10^-4
-
-    static boolean isEqual(double a, double b) {
-        return Math.abs(a-b) < threadHold;
-    }
+    static double threadHold = 0.0000001; // 10^-4
 
     static boolean isZero(double a) {
-        return isEqual(a, 0);
+        return a == 0;
+//        return Math.abs(a) < threadHold;
     }
 
 }
