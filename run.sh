@@ -1,4 +1,4 @@
 javac -d out src/*.java
 cd out
-java Fenwick < ../input/fenwick2.in
+java Equationsolver < ../input/equationsolver_sample.1.in
 cd ..
