@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Author: Jesper Wrang (jeswr740)
  * Date: 24/01/19
@@ -11,64 +9,69 @@ public class Knapsack {
     public static void main(String[] args) {
         while(io.hasMoreTokens()) {
             double C = io.getDouble();
+            capacity = (int) Math.floor(C);
+
             int n = io.getInt();
-            List<Item> items = new ArrayList<>();
+            items = new Item[n];
 
             for(int i = 0; i < n; i++) {
                 int value = io.getInt();
                 int weight = io.getInt();
-
-                items.add(new Item(value, weight, i));
+                items[i] = new Item(value, weight, i);
             }
 
-            knapsack((int) Math.floor(C), items);
+            values = new int[n][capacity + 1];
+            knapsack();
         }
 
         io.close();
     }
 
-    static void knapsack(int capacity, List<Item> items) {
-        Map<String, Integer> values = new HashMap<>();
-        //items.sort(Comparator.comparingInt(item -> item.value));
-        Map<String, String> solutions = new HashMap<>();
+    static int capacity;
+    static Item[] items;
+    static int[][] values;
 
+    static void knapsack() {
         // Generate a computed map of all possible values
         // Use old values to generate new ones
-        for(int index = 0; index < items.size(); index++) {
+        for(int i = 0; i < items.length; i++) {
             for(int weight = 0; weight <= capacity; weight++) {
-                String currentKey = "w" + weight + "i" + index;
-                int lastValue = index == 0 ? 0 : values.get("w" + weight + "i" + (index - 1));
-                String lastSolution = index == 0 ? "" : solutions.get("w" + weight + "i" + (index - 1));
-                Item item = items.get(index);
+                int excludeValue = i == 0 ? 0 : values[i-1][weight];
 
-                // Too heavy to include
-                if (item.weight > weight) {
-                    // Use last value
-                    values.put(currentKey, lastValue);
-                    solutions.put(currentKey, lastSolution);
-                }
-                // Decide if you should include the item or not by looking at the max value of doing both
-                else {
-                    int includedValue = index == 0 ? 0 : values.get("w" + (weight - item.weight) + "i" + (index - 1));
-                    String includedSolution = index == 0 ? "" : solutions.get("w" + (weight - item.weight) + "i" + (index - 1));
-
-                    int included = includedValue + item.value;
-                    int excluded = lastValue;
-
-                    if(included >= excluded) {
-                        values.put(currentKey, included);
-                        solutions.put(currentKey,   includedSolution + item.index + " ");
-                    } else {
-                        values.put(currentKey, excluded);
-                        solutions.put(currentKey, lastSolution);
-                    }
-
+                // Too heavy, just use the last value
+                if(weight < items[i].weight) {
+                    values[i][weight] = excludeValue;
+                } else {
+                    int lastValue = i == 0 ? 0 : values[i-1][weight-items[i].weight];
+                    int includeValue = lastValue + items[i].value;
+                    // Take max of including the item and not doing so
+                    values[i][weight] = Math.max(includeValue, excludeValue);
                 }
             }
         }
 
-        String solution =  solutions.get("w" + capacity + "i" + (items.size() - 1));
-        io.println(solution.split(" ").length);
+        int weight = capacity;
+        int numberOfItems = 0;
+        String solution = "";
+
+        // Backtrack to get full solution
+        for(int i = items.length-1; i >= 0; i--) {
+            int currentValue = values[i][weight];
+            int lastValue = i == 0 ? 0 : values[i-1][weight];
+
+            if(currentValue == 0) {
+                break;
+            }
+
+            // Included item
+            if(values[i][weight] != lastValue) {
+                numberOfItems++;
+                solution += i + " ";
+                weight -= items[i].weight;
+            }
+        }
+
+        io.println(numberOfItems);
         io.println(solution);
     }
 
