@@ -1,3 +1,9 @@
+/**
+ * Author: Jesper Wrang (jeswr740)
+ * Date: 11/02/19
+ */
+
+
 public class FenwickTree {
     long[] fenwickTree;
 
@@ -8,9 +14,10 @@ public class FenwickTree {
     }
 
     void add(int index, long delta) {
+        // Make it so the user can use 0-based index
         index++;
 
-        while(index <= fenwickTree.length - 1) {
+        while(index < fenwickTree.length) {
             fenwickTree[index] += delta;
             index += (index & -index); // Go to next power of two
         }
@@ -18,7 +25,7 @@ public class FenwickTree {
 
     long sum(int end) {
         long sum = 0;
-        int index = end;
+        int index = end + 1;
 
         while(index > 0) {
             sum += fenwickTree[index];
@@ -28,8 +35,28 @@ public class FenwickTree {
         return sum;
     }
 
+    // INCLUDING END!!!
     long sum(int start, int end) {
         return sum(end) - sum(start - 1);
+    }
+
+
+    public static void main(String[] args) {
+        int size = 5;
+        FenwickTree f = new FenwickTree(size);
+
+
+        for(int i = 0; i < size; i++) {
+            f.add(i, i);
+        }
+
+        for(int i = 0; i < size; i++) {
+            System.out.println(f.sum(i));
+        }
+
+        System.out.println("1 + 2 + 3 = " + f.sum(1, 3));
+        System.out.println("2 + 3 + 4 = " + f.sum(2, 4));
+        System.out.println("2 = " + f.sum(2, 2));
     }
 
 }
