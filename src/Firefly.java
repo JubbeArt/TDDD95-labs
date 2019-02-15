@@ -25,7 +25,7 @@ public class Firefly {
             int obstacleHeight = io.getInt();
 
             if(isFloor) {
-                // bottom to height
+                // b to height
                 for(int i = height - 1; i >= (height - obstacleHeight); i--) {
                     rows[i]++;
 
@@ -40,7 +40,7 @@ public class Firefly {
 
                 }
             } else {
-                // top to height
+                // a to height
                 for(int i = 0; i < obstacleHeight; i++) {
                     rows[i]++;
 
