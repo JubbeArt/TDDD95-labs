@@ -3,7 +3,6 @@
  * Date: 27/01/19
  */
 
-
 public class Polymul2 {
     static Kattio io = new Kattio(System.in, System.out);
 
