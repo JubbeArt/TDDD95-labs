@@ -47,7 +47,7 @@ solve(int i, int height) {
 * sort, try all solutions
 * greedy (mine) does not work
 
-# Knapsack
+# knapsack
 
 * DP problem
 * dp[i][w]

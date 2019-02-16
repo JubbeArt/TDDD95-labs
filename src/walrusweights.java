@@ -6,7 +6,7 @@ import java.util.Set;
  * Date: 14/02/19
  */
 
-public class Walrusweights {
+public class walrusweights {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

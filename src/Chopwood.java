@@ -1,5 +1,7 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+/**
+ * Author: Jesper Wrang (jeswr740)
+ * Date: 16/02/19
+ */
 
 public class Chopwood {
     static Kattio io = new Kattio(System.in, System.out);

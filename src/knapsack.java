@@ -3,7 +3,7 @@
  * Date: 24/01/19
  */
 
-public class Knapsack {
+public class knapsack {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

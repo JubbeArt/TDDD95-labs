@@ -7,7 +7,7 @@ import java.util.List;
  * Date: 11/02/19
  */
 
-public class Hidingplaces {
+public class hidingplaces {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
@@ -131,7 +131,7 @@ public class Hidingplaces {
                 BoardPlace place = unvisitedNodes.poll();
                 List<BoardPlace> neighbors = edges.get(place);
 
-                // Loop through all edges out of the current node
+                // Loop through all neighbors out of the current node
                 for(BoardPlace neighbor : neighbors) {
                     int distance = getDistance(place) + 1;
 

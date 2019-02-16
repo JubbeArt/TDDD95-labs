@@ -8,7 +8,7 @@ import java.util.HashSet;
  */
 
 
-public class Happyprime {
+public class happyprime {
 
     static Kattio io = new Kattio(System.in, System.out);
 

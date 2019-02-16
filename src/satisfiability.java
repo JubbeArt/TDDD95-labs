@@ -6,7 +6,7 @@ import java.util.*;
  */
 
 
-public class Satisfiability {
+public class satisfiability {
     static Kattio io = new Kattio(System.in, System.out);
 
     // CUSTOM MADE "BOOLEAN" TYPE,

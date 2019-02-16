@@ -3,7 +3,7 @@
  * Date: 11/02/19
  */
 
-public class Ignore {
+public class ignore {
 
     static Kattio io = new Kattio(System.in, System.out);
 

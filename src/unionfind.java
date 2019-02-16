@@ -4,7 +4,7 @@
  */
 
 
-public class Unionfind {
+public class unionfind {
     static Kattio io = new Kattio(System.in, System.out);
 
     static int[] parents;

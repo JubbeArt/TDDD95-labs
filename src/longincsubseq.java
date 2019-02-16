@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Date: 06/02/19
  */
 
-public class Longincsubseq {
+public class longincsubseq {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

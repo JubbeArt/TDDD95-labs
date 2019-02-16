@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 
 
-public class Stringmatching {
+public class stringmatching {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

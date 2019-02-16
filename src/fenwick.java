@@ -6,7 +6,7 @@ import java.util.Arrays;
  */
 
 
-public class Fenwick {
+public class fenwick {
 
     static Kattio io = new Kattio(System.in, System.out);
 

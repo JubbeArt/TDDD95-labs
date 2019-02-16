@@ -5,7 +5,7 @@ import java.util.*;
  * Date: 11/02/19
  */
 
-public class Shortestpath1 {
+public class shortestpath1 {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Shortestpath1 {
 
                 edges.get(startNode).add(new Edge(startNode, endNode, cost));
                 // add this to get non-directed graph
-                //edges.get(endNode).add(new Dijkstra.BoardPlace(endNode, startNode, cost));
+                //neighbors.get(endNode).add(new Dijkstra.BoardPlace(endNode, startNode, cost));
             }
 
             Dijkstra dijkstra = new Dijkstra(edges, nodesLength, startIndex);
@@ -85,7 +85,7 @@ public class Shortestpath1 {
                 int node = unvisitedNodes.poll();
                 List<Edge> neighbors = edges.get(node);
 
-                // Loop through all edges out of the current node
+                // Loop through all neighbors out of the current node
                 for(Edge neighbor : neighbors) {
                     int distance = distances[node] + neighbor.cost;
 

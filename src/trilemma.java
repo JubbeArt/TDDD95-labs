@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Date: 15/02/19
  */
 
-public class Trilemma {
+public class trilemma {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
@@ -13,9 +13,9 @@ public class Trilemma {
         int triangles = io.getInt();
 
         for(int caze = 0; caze < triangles; caze++) {
-            VectorInt p1 =  new VectorInt(io.getInt(), io.getInt());
-            VectorInt p2 =  new VectorInt(io.getInt(), io.getInt());
-            VectorInt p3 =  new VectorInt(io.getInt(), io.getInt());
+            Point p1 =  new Point(io.getInt(), io.getInt());
+            Point p2 =  new Point(io.getInt(), io.getInt());
+            Point p3 =  new Point(io.getInt(), io.getInt());
 
             io.print("Case #" + (caze + 1) + ": ");
             solve(p1, p2, p3);
@@ -24,7 +24,7 @@ public class Trilemma {
         io.close();
     }
 
-    static void solve(VectorInt p1, VectorInt p2, VectorInt p3) {
+    static void solve(Point p1, Point p2, Point p3) {
         double[] lengths = new double[]{
                 p1.distance(p2),
                 p1.distance(p3),

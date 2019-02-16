@@ -5,7 +5,7 @@ import java.util.*;
  * Date: 11/02/19
  */
 
-public class Shortestpath2 {
+public class shortestpath2 {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
@@ -19,23 +19,20 @@ public class Shortestpath2 {
                 break;
             }
 
-            Map<Integer, List<Edge>> edges = new HashMap<>();
+            ArrayList<Edge>[] neighbors = new ArrayList[nodesLength];
 
             for(int i = 0; i < nodesLength; i++) {
-                edges.put(i, new ArrayList<>());
+                neighbors[i] = new ArrayList<>();
             }
 
             for(int i = 0; i < edgesLength; i++) {
-                int startNode = io.getInt();
-                int endNode = io.getInt();
-                int cost = io.getInt();
-
-                edges.get(startNode).add(new Edge(startNode, endNode, cost));
+                neighbors[io.getInt()].add(new Edge(io.getInt(), io.getInt(), io.getInt(), io.getInt()));
                 // add this to get non-directed graph
-                //edges.get(endNode).add(new Dijkstra.BoardPlace(endNode, startNode, cost));
+                //neighbors.get(endNode).add(new Dijkstra.BoardPlace(endNode, startNode, cost));
             }
 
-            Dijkstra dijkstra = new Dijkstra(edges, nodesLength, startIndex);
+
+            Dijkstra dijkstra = new Dijkstra(neighbors, nodesLength, startIndex);
 
             for(int query = 0; query < queriesLength; query++) {
                 int length = dijkstra.getDistance(io.getInt());
@@ -52,17 +49,16 @@ public class Shortestpath2 {
     }
 
 
-
     public static class Dijkstra {
-        public Map<Integer, List<Edge>> edges;
+        public ArrayList<Edge>[] neighbors;
         public int[] distances;
         public int[] parents;
         public int nodes;
         public int startIndex;
 
-        Dijkstra(Map<Integer, List<Edge>> edges, int numberOfNodes, int startIndex) {
+        Dijkstra(ArrayList<Edge>[] neighbors, int numberOfNodes, int startIndex) {
             this.nodes = numberOfNodes;
-            this.edges = edges;
+            this.neighbors = neighbors;
             this.distances = new int[nodes];
             this.parents = new int[nodes];
             this.startIndex = startIndex;
@@ -83,11 +79,13 @@ public class Shortestpath2 {
 
             while(!unvisitedNodes.isEmpty()) {
                 int node = unvisitedNodes.poll();
-                List<Edge> neighbors = edges.get(node);
+                List<Edge> neighbors = this.neighbors[node];
 
-                // Loop through all edges out of the current node
+                // Loop through all neighbors out of the current node
                 for(Edge neighbor : neighbors) {
-                    int distance = distances[node] + neighbor.cost;
+
+                    if(neighbor.getNextAvaliableTime(distances[node]) == Integer.MAX_VALUE) continue;
+                    int distance = Math.max(distances[node], neighbor.getNextAvaliableTime(distances[node])) + neighbor.cost;
 
                     // New shorter distance
                     if(distance < distances[neighbor.end]) {
@@ -135,19 +133,22 @@ public class Shortestpath2 {
     }
 
     static class Edge {
-        int start;
         int end;
-        int cost;
+        int startTime; // t0
+        int period; // P
+        int cost; // d
 
-        Edge(int start, int end, int cost) {
-            this.start = start;
+        Edge(int end, int startTime, int period, int cost) {
             this.end = end;
+            this.startTime = startTime;
+            this.period = period;
             this.cost = cost;
         }
 
-        @Override
-        public String toString() {
-            return String.format("(%d -> %d)", start, end);
+        int getNextAvaliableTime(int current) {
+            if(current <= startTime) return startTime;
+            if(period != 0) return (int)Math.ceil((current - startTime) / (double) period) * period + startTime;
+            return Integer.MAX_VALUE;
         }
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
  * Date: 24/01/19
  */
 
-public class Intervalcover {
+public class intervalcover {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

@@ -3,7 +3,7 @@
  * Date: 12/02/19
  */
 
-public class Gold {
+public class gold {
 
     static Kattio io = new Kattio(System.in, System.out);
 

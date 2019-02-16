@@ -3,9 +3,7 @@
  * Date: 04/02/19
  */
 
-
-
-public class Spiderman {
+public class spiderman {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

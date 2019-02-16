@@ -3,7 +3,7 @@
  * Date: 14/02/19
  */
 
-public class Polygonarea {
+public class polygonarea {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
@@ -12,10 +12,10 @@ public class Polygonarea {
             int vertices = io.getInt();
             if(vertices == 0) break;
 
-            VectorInt[] points = new VectorInt[vertices];
+            Point[] points = new Point[vertices];
 
             for(int i = 0; i < vertices; i++) {
-                points[i] = new VectorInt(io.getInt(), io.getInt());
+                points[i] = new Point(io.getInt(), io.getInt());
             }
 
             solve(points);
@@ -24,7 +24,7 @@ public class Polygonarea {
         io.close();
     }
 
-    static void solve(VectorInt[] points) {
+    static void solve(Point[] points) {
         double area = 0;
 
         // do the shoelace formula

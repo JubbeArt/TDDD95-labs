@@ -3,7 +3,7 @@
  * Date: 14/02/19
  */
 
-public class Wheresmyinternet {
+public class wheresmyinternet {
     static Kattio io = new Kattio(System.in, System.out);
 
 

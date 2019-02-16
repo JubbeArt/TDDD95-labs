@@ -5,7 +5,7 @@ import java.util.BitSet;
  * Date: 14/02/19
  */
 
-public class Supercomputer {
+public class supercomputer {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
