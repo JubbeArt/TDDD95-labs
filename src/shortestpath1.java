@@ -32,7 +32,7 @@ public class shortestpath1 {
 
                 edges.get(startNode).add(new Edge(startNode, endNode, cost));
                 // add this to get non-directed graph
-                //neighbors.get(endNode).add(new Dijkstra.BoardPlace(endNode, startNode, cost));
+                //edgeLookup.get(endNode).add(new BellmanFord.BoardPlace(endNode, startNode, capacity));
             }
 
             Dijkstra dijkstra = new Dijkstra(edges, nodesLength, startIndex);
@@ -85,7 +85,7 @@ public class shortestpath1 {
                 int node = unvisitedNodes.poll();
                 List<Edge> neighbors = edges.get(node);
 
-                // Loop through all neighbors out of the current node
+                // Loop through all edgeLookup out of the current node
                 for(Edge neighbor : neighbors) {
                     int distance = distances[node] + neighbor.cost;
 

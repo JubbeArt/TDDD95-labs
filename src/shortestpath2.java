@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Author: Jesper Wrang (jeswr740)
- * Date: 11/02/19
+ * Date: 16/02/19
  */
 
 public class shortestpath2 {
@@ -28,7 +28,7 @@ public class shortestpath2 {
             for(int i = 0; i < edgesLength; i++) {
                 neighbors[io.getInt()].add(new Edge(io.getInt(), io.getInt(), io.getInt(), io.getInt()));
                 // add this to get non-directed graph
-                //neighbors.get(endNode).add(new Dijkstra.BoardPlace(endNode, startNode, cost));
+                //edgeLookup.get(endNode).add(new BellmanFord.BoardPlace(endNode, startNode, capacity));
             }
 
 
@@ -81,7 +81,7 @@ public class shortestpath2 {
                 int node = unvisitedNodes.poll();
                 List<Edge> neighbors = this.neighbors[node];
 
-                // Loop through all neighbors out of the current node
+                // Loop through all edgeLookup out of the current node
                 for(Edge neighbor : neighbors) {
 
                     if(neighbor.getNextAvaliableTime(distances[node]) == Integer.MAX_VALUE) continue;

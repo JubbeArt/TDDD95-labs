@@ -131,7 +131,7 @@ public class hidingplaces {
                 BoardPlace place = unvisitedNodes.poll();
                 List<BoardPlace> neighbors = edges.get(place);
 
-                // Loop through all neighbors out of the current node
+                // Loop through all edgeLookup out of the current node
                 for(BoardPlace neighbor : neighbors) {
                     int distance = getDistance(place) + 1;
 
