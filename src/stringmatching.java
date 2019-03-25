@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * Author: Jesper Wrang (jeswr740)
- * Date: 15/02/19
+ * Date: 10/03/19
  */
 
 
@@ -14,55 +13,71 @@ public class stringmatching {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        io.println(Arrays.toString(createPrefixFunction("ababaca")));
+        while(scanner.hasNext()) {
+            String pattern = scanner.nextLine();
+            String text = scanner.nextLine();
 
-//        while(scanner.hasNext()) {
-//            String pattern = scanner.nextLine();
-//            String word = scanner.nextLine();
-//
-//            solve(pattern, word);
-//        }
+            solve(pattern, text);
+        }
 
         io.close();
     }
 
-    static void solve(String pattern, String word) {
-        int[] prefixMapping = createPrefixFunction(pattern);
+    static void solve(String pattern, String text) {
+        ArrayList<Integer> solution = KMPMatcher(pattern, text);
+
+        for(int match : solution) {
+            io.print(match + " ");
+        }
         io.println();
     }
 
-    static int[] createPrefixFunction(String pattern) {
-        int[] Π = new int[pattern.length()];
-        Π[0] = 0;
-        int k = 0;
+    static ArrayList<Integer> KMPMatcher(String pattern, String text) {
+        ArrayList<Integer> solution = new ArrayList<>();
+        int n = text.length();
+        int m = pattern.length();
+        int[] pi =  calculatePrefixFunction(pattern);
+        int q = 0;
 
-        for(int q = 1; q < pattern.length(); q++) {
-            while(k > 0 && pattern.charAt(k + 1) != pattern.charAt(q)) {
-                k = Π[k];
+        for(int i = 0; i < n; i++) {
+            while(q >= 0 && pattern.charAt(q) != text.charAt(i)) {
+                if(q > 0) {
+                    q = pi[q - 1];
+                } else {
+                    q--;
+                }
             }
 
-            if(pattern.charAt(k + 1) == pattern.charAt(q)) {
-                k++;
+            q++;
+
+            // match found
+            if(q == m) {
+                solution.add(i - m + 1);
+                q = pi[m - 1];
             }
-
-            Π[q] = k;
-
-
-//
-
-//            do {
-//                k = Π[k];
-//
-//                if(pattern.charAt(k + 1) == pattern.charAt(q)) {
-//                    k++;
-//                }
-//
-//                Π[q] = k;
-//            } while(k > 0 && pattern.charAt(k + 1) != pattern.charAt(q));
         }
 
-        return Π;
+
+        return solution;
     }
 
+    static int[] calculatePrefixFunction(String pattern) {
+        int m = pattern.length();
+        int[] pi = new int[m];
+        int k = 0;
 
+        for(int q = 1; q < m; q++) {
+            // current char do not match, go back till it does
+            while (k > 0 && pattern.charAt(k) != pattern.charAt(q)) {
+                k = pi[k - 1];
+            }
+
+            if(pattern.charAt(k) == pattern.charAt(q)) {
+                k++;
+            }
+            pi[q] = k;
+        }
+
+        return pi;
+    }
 }

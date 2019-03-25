@@ -9,7 +9,7 @@ public class FenwickTree {
 
     FenwickTree(int size) {
         // The fenwick tree is always 1 larger than the "actual size",
-        // since the 0 index is not used
+        // since the 0 index is not visited
         fenwickTree = new long[size + 1];
     }
 
