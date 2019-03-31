@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Author: Jesper Wrang (jeswr740)
@@ -32,13 +31,24 @@ public class stringmultimatching {
         Node start = new Node(' ');
 
         for(int i = 0; i < patterns.length; i++) {
-            List<Character> chars = patterns[i].chars().mapToObj(c -> (char)c).collect(Collectors.toList());
-            start.addPattern(chars, i);
+            start.addPattern(patterns[i], i);
         }
 
+//        boolean hasFoundMat
+
+        Node current = start;
+
+        for(int i = 0; i < text.length(); i++) {
+            if(current.children.containsKey(text.charAt(i))) {
+                current = current.children.get(text.charAt(i));
+
+
+            }
+        }
 
     }
 
+    // represents a suffix tree
     static class Node {
         // could also be made as an ASCII-array...
         Map<Character, Node> children = new HashMap<>();
@@ -51,12 +61,10 @@ public class stringmultimatching {
         }
 
 
-        void addPattern(List<Character> characters, int patternIndex) {
-            boolean isLast = characters.size() == 1;
-
-            // remove first and add to tree,
-            // do this recursively till nothing is left to add
-            char character = characters.remove(0);
+        //
+        void addPattern(String pattern, int patternIndex) {
+            // add first char to tree, do this recursively till nothing is left to add
+            char character = pattern.charAt(0);
 
             Node child = children.get(character);
 
@@ -67,11 +75,13 @@ public class stringmultimatching {
             }
 
 
-            if(isLast) {
+            // is last in pattern
+            if(patternIndexes.size() == 1) {
                 child.patternIndexes.add(patternIndex);
                 child.isEndOfPattern = true;
             } else {
-                child.addPattern(characters, patternIndex);
+                child.addPattern(pattern.substring(1), patternIndex);
+                child.isEndOfPattern = false;
             }
         }
     }

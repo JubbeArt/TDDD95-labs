@@ -45,7 +45,6 @@ public class freckles {
     }
 
     static class Kruskal {
-
         PriorityQueue<Edge> edges;
         int numOfNodes;
         UnionFind unionFind;

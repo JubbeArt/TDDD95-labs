@@ -36,8 +36,8 @@ public class Closestpair1 {
 
 //        double L = 0;
 //        for(int i = startIndex; i <= endIndex; i++) {
-//            L += points[i].x;
-//            io.println(points[i]);
+//            L += moles[i].x;
+//            io.println(moles[i]);
 //        }
 //
 //        L = L / (endIndex - startIndex + 1);

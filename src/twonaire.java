@@ -3,7 +3,7 @@
  * Date: 14/02/19
  */
 
-public class X2naire {
+public class twonaire {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

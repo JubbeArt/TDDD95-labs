@@ -39,7 +39,7 @@ public class Uxuhulvoting {
 //                }
 //            }
 //            int stones = 0b000;
-//            solve(stones, 0);
+//            generateBitSet(stones, 0);
 //            printStone(solution);
 //        }
 //

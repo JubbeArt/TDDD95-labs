@@ -13,14 +13,14 @@ public class Howmanyzeros {
 //
 //            if(first == -1 && second == -1) break;
 //
-//            solve(first, second);
+//            generateBitSet(first, second);
 //
 //        }
-//        io.println(solve(0));
-//        io.println(solve(1));
-//        io.println(solve(9));
-//        io.println(solve(20));
-//        io.println(solve(21));
+//        io.println(generateBitSet(0));
+//        io.println(generateBitSet(1));
+//        io.println(generateBitSet(9));
+//        io.println(generateBitSet(20));
+//        io.println(generateBitSet(21));
 //        io.println();
         io.println(solve(125));
         io.println();

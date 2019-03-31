@@ -77,12 +77,12 @@ public class eulerianpath2 {
 
             if(type == NodeType.invalid) return null;
             if(type == NodeType.start) {
-                // two start points => invalid graph
+                // two start moles => invalid graph
                 if(start != -1) return null;
                 start = i;
             }
             if(type == NodeType.end) {
-                // multiple end points
+                // multiple end moles
                 if(end != -1) return null;
                 end = i;
             }
@@ -111,15 +111,19 @@ public class eulerianpath2 {
         // now just take all other possible paths, this should be possible since all paths left are cycles
         int edgesLeft = numOfEdges - startToEnd.size();
         List<Integer> solution = new ArrayList<>();
+        int current = start;
 
         while(true) {
-//            if() {
-//
-//            }
-break;
+            if(edgesLeft == 0) {
+                break;
+            }
+
+
+
+
         }
 
-        return null;
+        return solution;
     }
 
     enum NodeType {
