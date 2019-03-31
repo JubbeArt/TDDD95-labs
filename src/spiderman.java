@@ -1,26 +1,52 @@
 /**
  * Author: Jesper Wrang (jeswr740)
- * Date: 04/02/19
+ * Date: 31/03/19
  */
 
 public class spiderman {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
-        int N = io.getInt();
-        int maxHeight = 1001;
+        int numberOfTests = io.getInt();
 
-        for(int n = 0; n < N; n++) {
-            int M = io.getInt();
-            heights = new int[M];
-            bestMaxHeight = 2000;
+        for(int test = 0; test < numberOfTests; test++) {
+            int numberOfHeights = io.getInt();
+            heights = new int[numberOfHeights];
+            move = new String[40][1001];
+            cache = new int[40][1001];
 
-            for(int i = 0; i < M; i++) {
+            for(int i = 0; i < numberOfHeights; i++) {
                 heights[i] = io.getInt();
             }
 
-            solve(0, 0, 0, "");
-            io.println(solution);
+            for(int i = 0; i < 40; i++) {
+                for(int h = 0; h < 1001; h++) {
+                    move[i][h] = "";
+                    cache[i][h] = -1;
+                }
+            }
+
+            int dist = getDistance(0, 0);
+
+            if(dist == Integer.MAX_VALUE) {
+                io.println("IMPOSSIBLE");
+            } else {
+                dist = 0;
+                String path = "";
+
+                for(int i = 0; i < heights.length; i++) {
+                    path += move[i][dist];
+
+                    if(move[i][dist].equals("U")) {
+                        dist += heights[i];
+                    } else {
+                        dist -= heights[i];
+                    }
+                }
+
+                io.println(path);
+
+            }
         }
 
         io.close();
@@ -28,32 +54,37 @@ public class spiderman {
 
     static int[] heights;
     static String solution;
-    static int bestMaxHeight;
+
+    static String[][] move;
     static int[][] cache;
 
-    public static void solve(int maxHeight, int currentHeight, int index, String path) {
-        if(index >= heights.length) {
-            if(bestMaxHeight == 2000 && currentHeight != 0) {
-                solution = "IMPOSSIBLE";
-            } else if(maxHeight < bestMaxHeight) {
-                solution = path;
-                bestMaxHeight = maxHeight;
-            }
-
-            return;
+    public static int getDistance(int currentHeight, int index) {
+        // underground
+        if(currentHeight < 0) {
+            return Integer.MAX_VALUE;
+        } else if(index == heights.length - 1 && heights[index] != currentHeight) {
+            return Integer.MAX_VALUE;
+        } else if(index == heights.length -1) {
+            move[index][currentHeight] = "D";
+            cache[index][currentHeight] = 0;
+            return 0;
+        } else if (cache[index][currentHeight] != -1) {
+            return cache[index][currentHeight];
         }
 
-        int heightUp = currentHeight + heights[index];
-        int heightDown = currentHeight - heights[index];
 
-        solve(Math.max(maxHeight, heightUp), heightUp, index + 1, path + "U");
+        int heightDown = getDistance(currentHeight - heights[index], index + 1);
+        int heightUp = getDistance(currentHeight + heights[index], index + 1);
 
-        // we are forced to up
-        if(heightDown < 0) {
-            return;
+        if(heightDown < heightUp) {
+            move[index][currentHeight] = "D";
+            cache[index][currentHeight] = Math.max(heightDown, currentHeight);
+
+        } else {
+            move[index][currentHeight] = "U";
+            cache[index][currentHeight] = Math.max(heightUp, currentHeight);
         }
 
-        solve(maxHeight, heightDown, index + 1,  path + "D");
-        return;
+        return cache[index][currentHeight];
     }
 }

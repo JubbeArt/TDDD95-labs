@@ -3,7 +3,7 @@
  * Date: 15/02/19
  */
 
-public class Rationalarithmetic {
+public class rationalarithmetic {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {

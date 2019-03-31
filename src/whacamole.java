@@ -38,17 +38,37 @@ public class whacamole {
                 }
             }
 
-            solve()
+            solve(moles);
         }
 
         io.close();
 
     }
 
-    static void solve() {
+    static void solve(List<Node> moles) {
 
-        
+        int maxDistance = 0;
+
+        for(Node startMole : moles) {
+            int distance = calcDistance(startMole, 0);
+
+            maxDistance = Math.max(distance, maxDistance);
+
+        }
+
+        io.println(maxDistance);
     }
+
+    static int calcDistance(Node mole, int distance) {
+        distance++;
+
+        for(Node child : mole.neighbors) {
+            distance = Math.max(calcDistance(child, distance), distance);
+        }
+
+        return distance;
+    }
+
 
     static class Node {
         int x;
@@ -65,26 +85,6 @@ public class whacamole {
 
         double distance(Node other) {
             return Math.sqrt((this.x - other.x) * (this.x - other.x) + (this.y - other.y) * (this.y - other.y));
-        }
-    }
-
-    static class Edge {
-        int end;
-        int startTime; // t0
-        int period; // P
-        int cost; // d
-
-        Edge(int end, int startTime, int period, int cost) {
-            this.end = end;
-            this.startTime = startTime;
-            this.period = period;
-            this.cost = cost;
-        }
-
-        int getNextAvaliableTime(int current) {
-            if(current <= startTime) return startTime;
-            if(period != 0) return (int)Math.ceil((current - startTime) / (double) period) * period + startTime;
-            return Integer.MAX_VALUE;
         }
     }
 }

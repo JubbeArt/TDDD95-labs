@@ -3,7 +3,7 @@
  * Date: 11/02/19
  */
 
-public class Turbo {
+public class turbo {
     static Kattio io = new Kattio(System.in, System.out);
 
     public static void main(String[] args) {
