@@ -33,60 +33,59 @@
 
 ## Exercises
 
-### Week 1
+#### Week 1
 
 * [Ljutnja](https://liu.kattis.com/problems/ljutnja) - [ljutnja.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/ljutnja.java)
 * [Spiderman's Workout](https://liu.kattis.com/problems/spiderman) - [spiderman.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/spiderman.java)
 
-### Week 2
+#### Week 2
 
 * [Chopping Wood](https://liu.kattis.com/problems/chopwood) - [chopwood.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/chopwood.java)
 * [The SetStack Computer](https://liu.kattis.com/problems/setstack) - [setstack.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/setstack.java)
 * [Turbo](https://liu.kattis.com/problems/turbo) - [turbo.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/turbo.java)
 
-### Week 3
+#### Week 3
 
 * [Ignore the Garbage](https://liu.kattis.com/problems/ignore) - [ignore.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/ignore.java)
 * [perfectpowers](https://liu.kattis.com/problems/perfectpowers) - [perfectpowers.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/perfectpowers.java)
 
-### Week 4
+#### Week 4
 
 * [The Uxuhul Voting System](https://liu.kattis.com/problems/uxuhulvoting) - [uxuhulvoting.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/uxuhulvoting.java)
 
-### Week 5
+#### Week 5
 
 * [Getting Gold](https://liu.kattis.com/problems/gold) - [gold.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/gold.java)
 
-### Week 6
+#### Week 6
 
 * [Island Hopping](https://liu.kattis.com/problems/islandhopping) - [islandhopping.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/islandhopping.java)
 
-### Week 7
+#### Week 7
 
 * [Hiding Places](https://liu.kattis.com/problems/hidingplaces) - [hidingplaces.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/hidingplaces.java)
 
-### Week 8
+#### Week 8
 
 
-### Week 9
+#### Week 9
 
-### Week 10
+#### Week 10
 
-### Week 11
+#### Week 11
 
 * [Yet Satisfiability Again!](https://liu.kattis.com/problems/satisfiability) - [satisfiability.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/satisfiability.java)
 
-### Week 12
+#### Week 12
 
 * [Factovisors](https://liu.kattis.com/problems/factovisors) - [factovisors.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/factovisors.java)
 * [Happy Happy Prime Prime](https://liu.kattis.com/problems/happyprime) - [happyprime.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/happyprime.java)
 
-### Week 13
+#### Week 13
 
 * [Triangle Trilemma](https://liu.kattis.com/problems/trilemma) - [trilemma.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/trilemma.java)
 
-### Week 14
-
+#### Week 14
 
 ## Sessions
 
