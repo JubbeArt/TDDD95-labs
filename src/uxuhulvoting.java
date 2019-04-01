@@ -3,7 +3,7 @@
  * Date: 11/02/19
  */
 
-public class Uxuhulvoting {
+public class uxuhulvoting {
     static Kattio io = new Kattio(System.in, System.out);
 
     static final int NNN = 0b000;
@@ -58,7 +58,6 @@ public class Uxuhulvoting {
             return cache[priestIndex][stones];
         }
 
-
         int stone1 = solve(flipStone(stones, 0), priestIndex + 1);
         int stone2 = solve(flipStone(stones, 1), priestIndex + 1);
         int stone3 = solve(flipStone(stones, 2), priestIndex + 1);
@@ -77,7 +76,6 @@ public class Uxuhulvoting {
         return best;
     }
 
-
     static void printStone(int binary) {
         io.print((binary & YNN) == YNN ? "Y": "N");
         io.print((binary & NYN) == NYN ? "Y": "N");
@@ -87,11 +85,5 @@ public class Uxuhulvoting {
 
     static int flipStone(int stone, int index) {
         return stone ^ (1 << index);
-    }
-
-    static int similarity(int stone1, int stone2) {
-        int a = (stone1 ^ stone2);
-        printStone(a);
-        return a;
     }
 }

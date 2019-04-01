@@ -18,7 +18,6 @@ public class ljutnja {
             childNeeds[i] = io.getLong();
         }
 
-
         Arrays.sort(childNeeds);
 
         solve(candies, childNeeds);

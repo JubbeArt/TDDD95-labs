@@ -48,12 +48,9 @@ public class ignore {
             }else {
                 baseValid += c;
             }
-
-
         }
 
         return baseValid;
-
     }
 
     // print number "upside down", rules are:
@@ -72,6 +69,7 @@ public class ignore {
                 io.print(current);
             }
         }
+
         io.println();
     }
 }
