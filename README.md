@@ -1,4 +1,4 @@
-# Lab 1
+## Lab 1
 
 * [Interval Cover](https://liu.kattis.com/problems/intervalcover) - [intervalcover.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/intervalcover.java)
 * [Knapsack](https://liu.kattis.com/problems/knapsack) - [knapsack.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/knapsack.java)
@@ -6,7 +6,7 @@
 * [Fenwick Tree](https://liu.kattis.com/problems/fenwick) - [FenwickTree.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/FenwickTree.java), [fenwick.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/fenwick.java)
 
 
-# Lab 2
+## Lab 2
 
 * [Single source shortest path, non-negative weights](https://liu.kattis.com/problems/shortestpath1) - [Dijkstra.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/Dijkstra.java), [shortestpath1.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/shortestpath1.java)
 * [Single source shortest path, time table](https://liu.kattis.com/problems/shortestpath2) - [shortestpath2.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/shortestpath2.java)
@@ -18,7 +18,7 @@
 * [Minimum Cost Maximum Flow](https://liu.kattis.com/problems/mincostmaxflow) - [mincostmaxflow.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/mincostmaxflow.java)
 
 
-# Lab 3
+## Lab 3
 
 * [String Matching](https://liu.kattis.com/problems/stringmatching) - [stringmatching.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/stringmatching.java)
 * [Rational Arithmetic](https://liu.kattis.com/problems/rationalarithmetic) - [rationalarithmetic.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/rationalarithmetic.java)
@@ -26,12 +26,12 @@
 * [Prime Sieve](https://liu.kattis.com/problems/primesieve) - [primesieve.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/primesieve.java)
 
 
-# Lab 4
+## Lab 4
 * [Polygon Area](https://liu.kattis.scrool.se/problems/polygonarea) - [polygonarea.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/polygonarea.java)
 * [Point in Polygon](https://liu.kattis.scrool.se/problems/pointinpolygon) - [pointinpolygon.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/pointinpolygon.java)
 
 
-# Exercises
+## Exercises
 
 ### Week 1
 
@@ -88,7 +88,7 @@
 ### Week 14
 
 
-# Sessions
+## Sessions
 
 * [Where's My Internet??](https://liu.kattis.com/problems/wheresmyinternet) - [wheresmyinternet.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/wheresmyinternet.java)
 * [Freckles](https://liu.kattis.com/problems/freckles) - [freckles.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/freckles.java)
