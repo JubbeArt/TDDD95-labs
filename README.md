@@ -47,7 +47,7 @@
 #### Week 3
 
 * [Ignore the Garbage](https://liu.kattis.com/problems/ignore) - [ignore.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/ignore.java)
-* [perfectpowers](https://liu.kattis.com/problems/perfectpowers) - [perfectpowers.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/perfectpowers.java)
+* [Perfect Pth Powers](https://liu.kattis.com/problems/perfectpowers) - [perfectpowers.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/perfectpowers.java)
 
 #### Week 4
 
@@ -70,7 +70,11 @@
 
 #### Week 9
 
+* [Evil Straw Warts Live](https://liu.kattis.com/problems/evilstraw) - [evilstraw.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/evilstraw.java)
+
 #### Week 10
+
+* [Suffix Array Re-construction](https://liu.kattis.com/problems/suffixarrayreconstruction) - [suffixarrayreconstruction.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/suffixarrayreconstruction.java)
 
 #### Week 11
 
