@@ -35,6 +35,8 @@
 
 #### Week 1
 
+* [Aspen Avenue](https://liu.kattis.com/problems/aspenavenue) - [aspenavenue.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/aspenavenue.java)
+* [Help!](https://liu.kattis.com/problems/help2) - [help2.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/help2.java)
 * [Ljutnja](https://liu.kattis.com/problems/ljutnja) - [ljutnja.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/ljutnja.java)
 * [Spiderman's Workout](https://liu.kattis.com/problems/spiderman) - [spiderman.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/spiderman.java)
 

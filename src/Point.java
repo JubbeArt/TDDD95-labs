@@ -33,7 +33,7 @@ public class Point {
     }
 
     public double distance(int x, int y) {
-        return Math.sqrt( Math.pow(this.x - x, 2)+ Math.pow(this.y - y, 2) );
+        return Math.sqrt( Math.pow(this.x - x, 2) + Math.pow(this.y - y, 2) );
     }
 
     public double angle(int x, int y) {
