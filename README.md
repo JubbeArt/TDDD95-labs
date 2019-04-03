@@ -50,6 +50,7 @@
 
 * [Ignore the Garbage](https://liu.kattis.com/problems/ignore) - [ignore.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/ignore.java)
 * [Perfect Pth Powers](https://liu.kattis.com/problems/perfectpowers) - [perfectpowers.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/perfectpowers.java)
+* [Three Digits](https://liu.kattis.com/problems/threedigits) - [threedigits.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/threedigits.java)
 
 #### Week 4
 
