@@ -67,6 +67,7 @@
 
 #### Week 8
 
+* [(un)Fair Play](https://liu.kattis.com/problems/unfairplay) - [unfairplay.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/unfairplay.java)
 
 #### Week 9
 
