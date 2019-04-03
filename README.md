@@ -66,6 +66,7 @@
 
 #### Week 7
 
+* [Get Shorty](https://liu.kattis.com/problems/getshorty) - [getshorty.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/getshorty.java)
 * [Hiding Places](https://liu.kattis.com/problems/hidingplaces) - [hidingplaces.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/hidingplaces.java)
 
 #### Week 8
