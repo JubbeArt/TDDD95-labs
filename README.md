@@ -91,6 +91,8 @@
 
 #### Week 14
 
+* [How many 0's?](https://liu.kattis.com/problems/howmanyzeros) - [howmanyzeros.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/howmanyzeros.java)
+
 ## Sessions
 
 * [Where's My Internet??](https://liu.kattis.com/problems/wheresmyinternet) - [wheresmyinternet.java](https://github.com/JubbeArt/TDDD95-labs/blob/master/src/wheresmyinternet.java)
